@@ -325,3 +325,13 @@ target triple = "ARCHITECTURE-VENDOR-OPERATING_SYSTEM-ENVIRONMENT"
 6. 编写 TargetSubtarget 类的子类从而可以使用命令行选项 -mcpu= 和 -mattr= 
 7. 可以选择支持JIT.
 
+# 编写 llvm 后端的过程
+
+1. 在 llvm/lib/target 目录下添加自己的文件夹,添加CMakeList.txt
+2. 添加对应的 xxxTargetMachine.h 和 xxxTargetMachine.cpp 其中 xxx 代表自己的架构.继承TargetMachine类并且实现get*Info,getDataLayout,getSubtargetImpl方法.
+3. 在llvm中注册,详见 llvm/Target/TargetRegistry.h
+4. 在 .td 文件中定义寄存器和寄存器类
+5. 实现 TargetRegisterInfo 类
+6. 指令映射
+7. 指令调度
+8. 

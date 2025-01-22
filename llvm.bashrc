@@ -1,0 +1,3 @@
+COMPILER_WORK_DIR=$(pwd)
+export LLVM_SRC_ROOT=$COMPILER_WORK_DIR/llvm-project
+export LLVM_OBJ_ROOT=$COMPILER_WORK_DIR/llvm-project
